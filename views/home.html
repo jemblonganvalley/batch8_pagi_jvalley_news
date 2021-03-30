@@ -1,12 +1,45 @@
 <section
-  class="container-fluid d-flex justify-content-center align-items-center"
+  class="container col-lg-12 py-5 d-flex flex-column align-items-center"
   style="height: auto; min-height: 100vh"
 >
   <h1 class="text-dark">Home</h1>
+  <div
+    class="row"
+    style="
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 80%;
+    "
+  >
+    {{#each data}}
+    <div class="card my-2 p-0 flex-column" style="width: 18rem">
+      <a href="{{this.url}}">
+        {{#if social_image}}
+        <img
+          src="{{this.social_image}}"
+          class="img-fluid"
+          alt="..."
+          style="object-fit: cover"
+        />
+        {{else}}
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+
+        {{/if}}
+        <div class="card-body p-3">
+          <h5 class="card-title">{{this.title}}</h5>
+          <p class="card-text">{{this.description}}</p>
+        </div>
+      </a>
+    </div>
+    {{/each}}
+  </div>
 </section>
 
 <section
-  class="container-fluid d-flex justify-content-center align-items-center bg-warning"
+  class="container-fluid bg-warning"
   style="height: auto; min-height: 100vh"
 >
   <h1 class="text-light">Home 2</h1>

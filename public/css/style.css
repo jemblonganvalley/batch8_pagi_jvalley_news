@@ -17,3 +17,24 @@ body {
   overflow-x: hidden;
   font-family: "Roboto Mono", monospace;
 }
+
+a {
+  color: inherit !important;
+}
+
+.card {
+  transition-duration: 0.3s;
+}
+
+.card a {
+  text-decoration: none;
+}
+
+.card-body {
+  color: inherit !important;
+  text-decoration: none;
+}
+
+.card:hover {
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
