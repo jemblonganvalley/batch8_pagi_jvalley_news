@@ -15,15 +15,14 @@ home.get("/", (req, res) => {
     });
 });
 
-home.get("/home/:page", (req, res) => {
-  const page = req.params.page;
+home.get("/search", (req, res) => {
+  const search = req.query.search;
   axios
     .get(
-      `https://dev.to/api/articles?tag=nextjs&page=${page}&per_page=9&state=fresh`
+      `https://dev.to/api/articles?tag=${search}&page=1&per_page=9&state=fresh`
     )
     .then((e) => {
       res.render("home", { data: e.data });
-      console.log(data);
     })
     .catch((err) => {
       console.error(err);
